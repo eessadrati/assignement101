@@ -1,15 +1,17 @@
+import MobileNavigation from '../sideBar/MobileNavigation';
 import LeftSection from './LeftSection';
 import RightSection from './RightSection';
 
 type Props = {
-  onOpenSideBar: (val: boolean) => void;
-  openSideBar: boolean;
+  onIsCollapsedChange: (val: boolean) => void;
+  isCollapsed: boolean;
 };
 
-const Header = ({ onOpenSideBar, openSideBar }: Props) => {
+const Header = ({ onIsCollapsedChange, isCollapsed }: Props) => {
   return (
-    <header className="flex px-2 border-b md:px-6 h-14">
-      {!openSideBar && <LeftSection onOpenSideBar={onOpenSideBar} />}
+    <header className="flex px-2 border-b md:pl-3 md:pr-6 h-14">
+      <MobileNavigation />
+      {isCollapsed && <LeftSection onIsCollapsedChange={onIsCollapsedChange} />}
       <RightSection />
     </header>
   );

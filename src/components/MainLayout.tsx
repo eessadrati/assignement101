@@ -1,21 +1,29 @@
 import { Outlet } from 'react-router-dom';
 import Header from './header';
 import { useState } from 'react';
-import SideBar from './SideBar';
+import { TooltipProvider } from './ui/tooltip';
+import SideBar from './sideBar';
 
 const MainLayout = () => {
-  const [openSideBar, setOpenSideBar] = useState(false);
-
+  const [isCollapsed, setIsCollapsed] = useState(true);
   return (
-    <div className="flex w-full">
-      <SideBar  />
-      <div className="flex-1">
-        <Header onOpenSideBar={setOpenSideBar}  openSideBar={openSideBar} />
-        <main style={{ marginLeft: '200px' }}>
-          <Outlet />
-        </main>
+    <TooltipProvider delayDuration={0}>
+      <div className="flex w-full h-full">
+        <SideBar
+          onIsCollapsedChange={setIsCollapsed}
+          isCollapsed={isCollapsed}
+        />
+        <div className="flex-1">
+          <Header
+            onIsCollapsedChange={setIsCollapsed}
+            isCollapsed={isCollapsed}
+          />
+          <main>
+            <Outlet />
+          </main>
+        </div>
       </div>
-    </div>
+    </TooltipProvider>
   );
 };
 
