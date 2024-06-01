@@ -13,12 +13,12 @@ const MainLayout = () => {
           onIsCollapsedChange={setIsCollapsed}
           isCollapsed={isCollapsed}
         />
-        <div className="flex flex-col flex-1 w-full overflow-hidden">
+        <div className="flex flex-col flex-1 w-full h-full overflow-hidden">
           <Header
             onIsCollapsedChange={setIsCollapsed}
             isCollapsed={isCollapsed}
           />
-          <main className="overflow-hidden">
+          <main className="h-full overflow-hidden">
             <Outlet />
           </main>
         </div>

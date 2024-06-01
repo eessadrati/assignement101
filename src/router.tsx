@@ -1,10 +1,12 @@
+/* eslint-disable react-refresh/only-export-components */
 import { Navigate, createBrowserRouter } from 'react-router-dom';
-import Home from '@/pages/Home';
-import Violations from '@/pages/Violations';
-import PPEs from '@/pages/PPEs';
-import Contractors from '@/pages/Contractors';
-import Workers from '@/pages/Workers';
 import MainLayout from '@/components/MainLayout';
+import { lazy } from 'react';
+const Home = lazy(() => import('@/pages/Home'));
+const Violations = lazy(() => import('@/pages/Violations'));
+const PPEs = lazy(() => import('@/pages/PPEs'));
+const Contractors = lazy(() => import('@/pages/Contractors'));
+const Workers = lazy(() => import('@/pages/Workers'));
 
 const router = createBrowserRouter([
   {
