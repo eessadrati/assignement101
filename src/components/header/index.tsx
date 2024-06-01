@@ -9,7 +9,7 @@ type Props = {
 
 const Header = ({ onIsCollapsedChange, isCollapsed }: Props) => {
   return (
-    <header className="flex px-2 border-b md:pl-3 md:pr-6 h-14">
+    <header className="flex px-2 border-b md:pl-3 md:pr-6 min-h-14">
       <MobileNavigation />
       {isCollapsed && <LeftSection onIsCollapsedChange={onIsCollapsedChange} />}
       <RightSection />

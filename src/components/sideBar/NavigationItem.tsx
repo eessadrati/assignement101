@@ -19,14 +19,9 @@ const NavigationItem = ({ link, isCollapsed }: Props) => {
         <TooltipTrigger asChild>
           <Link
             to={link.path}
-            className={cn(
-              buttonVariants({ variant, size: 'icon' }),
-              'h-9 w-9',
-              variant === 'default' &&
-                'bg-inherit text-primary hover:bg-text-accent-foreground'
-            )}
+            className={cn(buttonVariants({ variant, size: 'icon' }), 'h-9 w-9')}
           >
-            <link.icon className="w-5 h-5" />
+            <link.icon className="w-4 h-4" />
             <span className="sr-only">{link.title}</span>
           </Link>
         </TooltipTrigger>

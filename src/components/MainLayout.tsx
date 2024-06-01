@@ -5,7 +5,7 @@ import { TooltipProvider } from './ui/tooltip';
 import SideBar from './sideBar';
 
 const MainLayout = () => {
-  const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(false);
   return (
     <TooltipProvider delayDuration={0}>
       <div className="flex w-full h-full">
@@ -13,12 +13,12 @@ const MainLayout = () => {
           onIsCollapsedChange={setIsCollapsed}
           isCollapsed={isCollapsed}
         />
-        <div className="flex-1">
+        <div className="flex flex-col flex-1 w-full overflow-hidden">
           <Header
             onIsCollapsedChange={setIsCollapsed}
             isCollapsed={isCollapsed}
           />
-          <main>
+          <main className="overflow-hidden">
             <Outlet />
           </main>
         </div>

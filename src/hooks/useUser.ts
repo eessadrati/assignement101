@@ -7,12 +7,13 @@ type User = {
 };
 const useUser = () => {
   //mock user data
-  const [user, setUser] = useState<User | null>({
+  const [user] = useState<User | null>({
     profile: profileImage,
     name: 'BESIX Group',
     email: 'besix.group@besix.be',
   });
 
+  
   return user;
 };
 

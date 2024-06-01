@@ -1,10 +1,10 @@
 import { Navigate, createBrowserRouter } from 'react-router-dom';
-import Home from './pages/Home';
-import Violations from './pages/Violations';
-import PPEs from './pages/PPEs';
-import Contractors from './pages/Contractors';
-import Workers from './pages/Workers';
-import MainLayout from './components/MainLayout';
+import Home from '@/pages/Home';
+import Violations from '@/pages/Violations';
+import PPEs from '@/pages/PPEs';
+import Contractors from '@/pages/Contractors';
+import Workers from '@/pages/Workers';
+import MainLayout from '@/components/MainLayout';
 
 const router = createBrowserRouter([
   {
