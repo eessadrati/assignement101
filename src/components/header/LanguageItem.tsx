@@ -12,6 +12,7 @@ type Props = {
 const LanguageItem = ({ language, onLanguageChange }: Props) => {
   const { i18n } = useTranslation();
   const isActive = i18n.language === language.code;
+  
   const handleLanguageChange = useCallback(
     () => onLanguageChange(language),
     [language, onLanguageChange]
