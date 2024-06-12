@@ -44,7 +44,7 @@ const SideBar = ({ onIsCollapsedChange, isCollapsed }: Props) => {
           <p className="font-medium text-[13px]  text-[#939393]">
             @ App name 2021
           </p>
-          <p className="text-[11px] text-[#8a8a8a] p-1 ">
+          <p className="text-[11px] text-[#8a8a8a] p-1 leading-[17px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut.
           </p>

@@ -3,7 +3,7 @@ import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet';
 import { Navigation } from './Navigation';
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
-import logo from '@/assets/logo.png';
+import logo from '../../assets/logo.png';
 
 const MobileNavigation = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
