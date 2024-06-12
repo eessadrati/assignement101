@@ -3,7 +3,7 @@ import { ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from './ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
-import { type Locale, addDays, format } from 'date-fns';
+import { type Locale, format } from 'date-fns';
 import { Calendar } from './ui/calendar';
 import { DateRange } from 'react-day-picker';
 import {
@@ -25,13 +25,15 @@ const dateLocales: Record<string, Locale> = {
   nl,
 };
 
-const DatePicker = () => {
+type Props = {
+  date: DateRange | undefined;
+  onDateChange: (range: DateRange | undefined) => void;
+};
+
+const DatePicker = ({ date, onDateChange }: Props) => {
   const { t, i18n } = useTranslation();
+  const [currDate, setCurrDate] = useState<DateRange | undefined>(date);
   const [isOpen, setIsOpen] = useState(false);
-  const [date, setDate] = useState<DateRange | undefined>({
-    from: new Date(),
-    to: addDays(new Date(), 6),
-  });
 
   const onCancel = () => {
     setIsOpen(false);
@@ -39,11 +41,17 @@ const DatePicker = () => {
 
   const onApply = () => {
     setIsOpen(false);
+    onDateChange(currDate);
+  };
+
+  const onOpenChange = (open: boolean) => {
+    setIsOpen(open);
+    setCurrDate(date);
   };
 
   return (
     <div className="grid gap-2">
-      <Popover open={isOpen} onOpenChange={setIsOpen}>
+      <Popover open={isOpen} onOpenChange={onOpenChange}>
         <PopoverTrigger asChild>
           <Button
             id="date"
@@ -86,8 +94,8 @@ const DatePicker = () => {
             locale={dateLocales[i18n.language]}
             mode="range"
             defaultMonth={date?.from}
-            selected={date}
-            onSelect={setDate}
+            selected={currDate}
+            onSelect={setCurrDate}
           />
           <div className="flex justify-end pr-3 my-1">
             <Button

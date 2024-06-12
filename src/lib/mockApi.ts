@@ -2,6 +2,7 @@ import workerProfile from '@/assets/worker.png';
 import company from '@/assets/company.png';
 import violationImage2 from '@/assets/violation2.png';
 import violationImage1 from '@/assets/violation1.png';
+import { DateRange } from 'react-day-picker';
 
 export type ViolationInfo = {
   id: number;
@@ -1682,7 +1683,12 @@ const getViolations = (param: string) => {
   return violations.filter((violation) => violation.site === param);
 };
 
-const getViolationsBySearchWorkers = (search: string, site: string) => {
+const getViolationsBySearchWorkers = (
+  search: string,
+  site: string,
+  date: DateRange | undefined
+) => {
+  //assuming date affect the results
   if (site === 'All') {
     return violations.filter((v) => {
       return v.worker.name.toLowerCase().includes(search.toLowerCase());

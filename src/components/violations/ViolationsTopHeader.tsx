@@ -11,31 +11,43 @@ import {
 import { Button } from '@/components/ui/button';
 import { Expand } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { DateRange } from 'react-day-picker';
 
 type Props = {
   search: string;
   onSearch: (val: string) => void;
+  date: DateRange | undefined;
+  onDateChange: (range: DateRange | undefined) => void;
 };
 
-const ViolationsTopHeader = ({ search, onSearch }: Props) => {
-  const {t} =useTranslation();
+const ViolationsTopHeader = ({
+  date,
+  onDateChange,
+  search,
+  onSearch,
+}: Props) => {
+  const { t } = useTranslation();
 
   return (
     <div className="flex flex-col flex-wrap justify-between mb-4 lg:items-center lg:flex-row">
-      <h3 className="mb-2 text-base font-medium">{t('violationsPage.violationsTable')}</h3>
+      <h3 className="mb-2 text-base font-medium">
+        {t('violationsPage.violationsTable')}
+      </h3>
       <div className="flex flex-col gap-3 mr-2 md:items-center md:flex-row">
-        <div className='flex flex-col gap-3 sm:flex-row'>
-        <SearchInput search={search} onSearch={onSearch} />
-        <DatePicker />
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <SearchInput search={search} onSearch={onSearch} />
+          <DatePicker date={date} onDateChange={onDateChange} />
         </div>
-        <div className='flex gap-3'>
+        <div className="flex gap-3">
           <Select value="All Contractors">
             <SelectTrigger disabled className="w-full md:w-[180px]  h-8">
               <SelectValue placeholder="Select" />
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
-                <SelectItem value="All Contractors">{t('violationsPage.allContractors')}</SelectItem>
+                <SelectItem value="All Contractors">
+                  {t('violationsPage.allContractors')}
+                </SelectItem>
               </SelectGroup>
             </SelectContent>
           </Select>
