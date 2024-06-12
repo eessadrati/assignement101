@@ -1,0 +1,53 @@
+{
+  "loading": "Cargando ...",
+  "overview": "Resumen",
+  "searchWorkers": "Buscar trabajadores ...",
+  "pickDate": "Elige una fecha",
+  "dateRange": "Rango de fechas",
+  "custom": "Personalizado",
+  "cancel": "Cancelar",
+  "apply": "Aplicar",
+  "noData": "no hay datos para mostrar",
+  "profileMenu": {
+    "settings": "Configuración de perfil",
+    "policies": "Nuestras políticas",
+    "logOut": "Cerrar sesión"
+  },
+  "sideBar": {
+    "manage": "ADMINISTRAR",
+    "workers": "Trabajadores",
+    "contractors": "Contratistas",
+    "PPEs": "E.P.P.",
+    "violations": "Violaciones de E.P.P.",
+    "dashboard": "Tablero"
+  },
+  "pages": {
+    "goTo": "Ir a Violaciones de E.P.P.",
+    "checkViolations": "Por favor, consulte la página de Violaciones de E.P.P.",
+    "contractors": "Página de Contratistas",
+    "home": "Página Principal",
+    "PPEs": "Página de E.P.P.",
+    "workers": "Página de Trabajadores"
+  },
+  "violationsPage": {
+    "sites": "SITIOS",
+    "workers": "Trabajadores",
+    "violationsTable": "Tabla de Violaciones de E.P.P.",
+    "allContractors": "Todos los Contratistas",
+    "selectColumns": "Seleccionar columnas para mostrar"
+  },
+  "materials": {
+    "Protective gloves": "Guantes protectores",
+    "Safety glasses": "Gafas de seguridad",
+    "Ear protection": "Protección auditiva",
+    "Mask protection": "Protección de máscara",
+    "Knee pads": "Rodilleras",
+    "Safety shoes": "Zapatos de seguridad",
+    "Coverall": "Mono",
+    "Hi-Vis Jacket": "Chaqueta de alta visibilidad",
+    "Safety Harness": "Arnés de seguridad",
+    "Face shield": "Pantalla facial",
+    "Hard Hat": "Casco",
+    "Welding helmet": "Casco de soldadura"
+  }
+}

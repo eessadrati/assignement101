@@ -7,6 +7,7 @@ import { HiHandRaised } from 'react-icons/hi2';
 import { AiOutlineHome } from 'react-icons/ai';
 
 import { type IconType } from 'react-icons';
+import { useTranslation } from 'react-i18next';
 
 interface NavProps {
   isCollapsed: boolean;
@@ -20,12 +21,12 @@ export type LinkType = {
 
 const mainLinks: LinkType[] = [
   {
-    title: 'Dashboard',
+    title: 'dashboard',
     path: '/',
     icon: AiOutlineHome,
   },
   {
-    title: 'P.P.E Violations',
+    title: 'violations',
     path: '/PPE_violations',
     icon: HiHandRaised,
   },
@@ -33,23 +34,25 @@ const mainLinks: LinkType[] = [
 
 const manageLinks: LinkType[] = [
   {
-    title: 'P.P.Es',
+    title: 'PPEs',
     path: '/PPEs',
     icon: GiGloves,
   },
   {
-    title: 'Contractors',
+    title: 'contractors',
     path: '/contractors',
     icon: IoMdBriefcase,
   },
   {
-    title: 'Workers',
+    title: 'workers',
     path: '/workers',
     icon: BsFillPersonFill,
   },
 ];
 
 export function Navigation({ isCollapsed }: NavProps) {
+  const { t } = useTranslation();
+
   return (
     <div
       data-collapsed={isCollapsed}
@@ -65,7 +68,7 @@ export function Navigation({ isCollapsed }: NavProps) {
         ))}
         {isCollapsed && <Separator className="w-[65px] -mx-4 my-2" />}
         {!isCollapsed && (
-          <p className="text-xs my-2 font-medium text-[#B7B7B7]">MANAGE</p>
+          <p className="text-xs my-2 font-medium text-[#B7B7B7]">{t('sideBar.manage')}</p>
         )}
         {manageLinks.map((link) => (
           <NavigationItem

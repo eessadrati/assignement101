@@ -1,0 +1,53 @@
+{
+  "loading": "Chargement ...",
+  "overview": "Aperçu",
+  "searchWorkers": "Rechercher des travailleurs ...",
+  "pickDate": "Choisir une date",
+  "dateRange": "Période",
+  "custom": "Personnalisé",
+  "cancel": "Annuler",
+  "apply": "Appliquer",
+  "noData": "aucune donnée à afficher",
+  "profileMenu": {
+    "settings": "Paramètres du profil",
+    "policies": "Nos politiques",
+    "logOut": "Déconnexion"
+  },
+  "sideBar": {
+    "manage": "GÉRER",
+    "workers": "Travailleurs",
+    "contractors": "Entrepreneurs",
+    "PPEs": "É.P.I.",
+    "violations": "Violations des É.P.I.",
+    "dashboard": "Tableau de bord"
+  },
+  "pages": {
+    "goTo": "Aller aux Violations des É.P.I.",
+    "checkViolations": "Veuillez vérifier la page des Violations des É.P.I.",
+    "contractors": "Page des Entrepreneurs",
+    "home": "Page d'accueil",
+    "PPEs": "Page des É.P.I.",
+    "workers": "Page des Travailleurs"
+  },
+  "violationsPage": {
+    "sites": "SITES",
+    "workers": "Travailleurs",
+    "violationsTable": "Tableau des Violations des É.P.I.",
+    "allContractors": "Tous les Entrepreneurs",
+    "selectColumns": "Sélectionner les colonnes à afficher"
+  },
+  "materials": {
+    "Protective gloves": "Gants de protection",
+    "Safety glasses": "Lunettes de sécurité",
+    "Ear protection": "Protection auditive",
+    "Mask protection": "Protection masque",
+    "Knee pads": "Genouillères",
+    "Safety shoes": "Chaussures de sécurité",
+    "Coverall": "Combinaison",
+    "Hi-Vis Jacket": "Veste haute visibilité",
+    "Safety Harness": "Harnais de sécurité",
+    "Face shield": "Visière",
+    "Hard Hat": "Casque",
+    "Welding helmet": "Casque de soudage"
+  }
+}

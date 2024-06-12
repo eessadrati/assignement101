@@ -10,6 +10,7 @@ import {
 } from '../ui/select';
 import { Button } from '@/components/ui/button';
 import { Expand } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   search: string;
@@ -17,9 +18,11 @@ type Props = {
 };
 
 const ViolationsTopHeader = ({ search, onSearch }: Props) => {
+  const {t} =useTranslation();
+
   return (
     <div className="flex flex-col flex-wrap justify-between mb-4 lg:items-center lg:flex-row">
-      <h3 className="mb-2 text-base font-medium"> P.P.E Violations Table</h3>
+      <h3 className="mb-2 text-base font-medium">{t('violationsPage.violationsTable')}</h3>
       <div className="flex flex-col gap-3 mr-2 md:items-center md:flex-row">
         <div className='flex flex-col gap-3 sm:flex-row'>
         <SearchInput search={search} onSearch={onSearch} />
@@ -32,7 +35,7 @@ const ViolationsTopHeader = ({ search, onSearch }: Props) => {
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
-                <SelectItem value="All Contractors">All Contractors</SelectItem>
+                <SelectItem value="All Contractors">{t('violationsPage.allContractors')}</SelectItem>
               </SelectGroup>
             </SelectContent>
           </Select>

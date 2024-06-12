@@ -24,6 +24,7 @@ import { ViolationType, getViolations } from '@/lib/mockApi';
 import { useSearchParams } from 'react-router-dom';
 import ViolationTableRow from './ViolationTableRow';
 import MaterialTableHead from './MaterialTableHead';
+import { useTranslation } from 'react-i18next';
 
 export type Material = {
   name: string;
@@ -102,6 +103,7 @@ const defaultColumns: Record<string, boolean> = {
 
 const ViolationsTable = ({ searchResults }: Props) => {
   const [siteParam] = useSearchParams();
+  const { t } = useTranslation();
   const [selectedColumns, setSelectedColumns] = useState(defaultColumns);
   const [violations, setViolations] = useState<ViolationType[]>([]);
 
@@ -125,7 +127,9 @@ const ViolationsTable = ({ searchResults }: Props) => {
               onColumnsSelect={onColumnsSelect}
             />
           </TableHead>
-          <TableHead className="min-w-[245px] text-center">Workers</TableHead>
+          <TableHead className="min-w-[245px] text-center">
+            {t('violationsPage.workers')}
+          </TableHead>
           {materials.map((material) => (
             <MaterialTableHead
               key={material.name}
@@ -139,7 +143,7 @@ const ViolationsTable = ({ searchResults }: Props) => {
         {violations.length <= 0 && (
           <TableRow>
             <TableCell colSpan={4}>
-              <div className="w-full text-[#b9b9b9]">no data to display</div>
+              <div className="w-full text-[#b9b9b9]">{t('noData')}</div>
             </TableCell>
           </TableRow>
         )}

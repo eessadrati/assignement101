@@ -7,6 +7,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import ColumnsToggleItem from './ColumnsToggleItem';
 import { Material } from './ViolationsTable';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   columns: Material[];
@@ -19,6 +20,8 @@ const ColumnsToggle = ({
   columns,
   selectedColumns,
 }: Props) => {
+  const { t } = useTranslation();
+
   return (
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
@@ -27,7 +30,9 @@ const ColumnsToggle = ({
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-[162px]" align="start">
-        <div className="font-medium text-[11px] text-[#989797] ml-2">Select columns to display</div>
+        <div className="font-medium text-[11px] text-[#989797] ml-2">
+          {t('violationsPage.selectColumns')}
+        </div>
         {columns.map((column) => (
           <ColumnsToggleItem
             key={column.name}

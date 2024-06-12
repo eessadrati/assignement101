@@ -1,5 +1,6 @@
 import { TableHead } from '@/components/ui/table';
 import { Material } from './ViolationsTable';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   material: Material;
@@ -7,6 +8,8 @@ type Props = {
 };
 
 const MaterialTableHead = ({ selectedColumn, material }: Props) => {
+  const { t } = useTranslation();
+
   if (!selectedColumn) {
     return;
   }
@@ -18,7 +21,7 @@ const MaterialTableHead = ({ selectedColumn, material }: Props) => {
           className="flex-1 object-cover w-32 h-auto max-w-32"
           src={material.image}
         />
-        <p className="py-1">{material.name}</p>
+        <p className="py-1">{t(`materials.${material.name}`)}</p>
       </div>
     </TableHead>
   );

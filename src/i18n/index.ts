@@ -1,31 +1,26 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import enTranslation from './en.json';
+import frTranslation from './fr.json';
+import nlTranslation from './nl.json';
+import esTranslation from './es.json';
+import deTranslation from './de.json';
 
 const resources = {
   en: {
-    translation: {
-      Welcome: 'Welcome',
-    },
+    translation: enTranslation,
   },
   fr: {
-    translation: {
-      Welcome: 'Bienvenue',
-    },
+    translation: frTranslation,
   },
   nl: {
-    translation: {
-      Welcome: 'Welcome',
-    },
+    translation: nlTranslation,
   },
   es: {
-    translation: {
-      Welcome: 'Welcome',
-    },
+    translation: esTranslation,
   },
   de: {
-    translation: {
-      Welcome: 'Welcome',
-    },
+    translation: deTranslation,
   },
 };
 

@@ -3,7 +3,7 @@ import { ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from './ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
-import { addDays, format } from 'date-fns';
+import { type Locale, addDays, format } from 'date-fns';
 import { Calendar } from './ui/calendar';
 import { DateRange } from 'react-day-picker';
 import {
@@ -14,8 +14,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from './ui/select';
+import { useTranslation } from 'react-i18next';
+import { fr, es, de, enUS, nl } from 'date-fns/locale';
+
+const dateLocales: Record<string, Locale> = {
+  en: enUS,
+  fr,
+  es,
+  de,
+  nl,
+};
 
 const DatePicker = () => {
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [date, setDate] = useState<DateRange | undefined>({
     from: new Date(),
@@ -52,26 +63,27 @@ const DatePicker = () => {
                 format(date.from, 'dd/MM/yyyy')
               )
             ) : (
-              <span>Pick a date</span>
+              <span>{t('pickDate')}</span>
             )}
             <ChevronDown className="w-4 h-4" />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0" align="start">
           <div className="mx-2 mt-2">
-            <label className=" text-[#989797] text-xs">Date range</label>
+            <label className=" text-[#989797] text-xs">{t('dateRange')}</label>
             <Select value="Custom">
               <SelectTrigger className="w-[180px]  h-8">
                 <SelectValue placeholder="Select" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value="Custom">Custom</SelectItem>
+                  <SelectItem value="Custom">{t('custom')}</SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>
           </div>
           <Calendar
+            locale={dateLocales[i18n.language]}
             mode="range"
             defaultMonth={date?.from}
             selected={date}
@@ -83,13 +95,13 @@ const DatePicker = () => {
               variant="ghost"
               className="text-[#b6b6b6] text-sm"
             >
-              Cancel
+              {t('cancel')}
             </Button>
             <Button
               onClick={onApply}
               className="h-9 bg-[#37c34d] hover:bg-[#37c34d]/80"
             >
-              Apply
+              {t('apply')}
             </Button>
           </div>
         </PopoverContent>

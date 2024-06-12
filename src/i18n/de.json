@@ -1,0 +1,53 @@
+{
+  "loading": "Laden ...",
+  "overview": "Übersicht",
+  "searchWorkers": "Mitarbeiter suchen ...",
+  "pickDate": "Datum auswählen",
+  "dateRange": "Datumsbereich",
+  "custom": "Benutzerdefiniert",
+  "cancel": "Abbrechen",
+  "apply": "Anwenden",
+  "noData": "keine Daten vorhanden",
+  "profileMenu": {
+    "settings": "Profil-Einstellungen",
+    "policies": "Unsere Richtlinien",
+    "logOut": "Abmelden"
+  },
+  "sideBar": {
+    "manage": "VERWALTEN",
+    "workers": "Mitarbeiter",
+    "contractors": "Auftragnehmer",
+    "PPEs": "P.S.A.",
+    "violations": "P.S.A. Verstöße",
+    "dashboard": "Dashboard"
+  },
+  "pages": {
+    "goTo": "Zu P.S.A. Verstößen gehen",
+    "checkViolations": "Bitte überprüfen Sie die Seite zu P.S.A. Verstößen",
+    "contractors": "Auftragnehmer Seite",
+    "home": "Startseite",
+    "PPEs": "P.S.A. Seite",
+    "workers": "Mitarbeiter Seite"
+  },
+  "violationsPage": {
+    "sites": "STANDORTE",
+    "workers": "Mitarbeiter",
+    "violationsTable": "P.S.A. Verstöße Tabelle",
+    "allContractors": "Alle Auftragnehmer",
+    "selectColumns": "Spalten zum Anzeigen auswählen"
+  },
+  "materials": {
+    "Protective gloves": "Schutzhandschuhe",
+    "Safety glasses": "Schutzbrille",
+    "Ear protection": "Gehörschutz",
+    "Mask protection": "Maskenschutz",
+    "Knee pads": "Knieschoner",
+    "Safety shoes": "Sicherheitsschuhe",
+    "Coverall": "Overall",
+    "Hi-Vis Jacket": "Warnweste",
+    "Safety Harness": "Sicherheitsgurt",
+    "Face shield": "Gesichtsschutz",
+    "Hard Hat": "Helm",
+    "Welding helmet": "Schweißhelm"
+  }
+}

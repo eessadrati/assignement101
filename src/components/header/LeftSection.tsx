@@ -1,12 +1,14 @@
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   onIsCollapsedChange: (val: boolean) => void;
 };
 
 const LeftSection = ({ onIsCollapsedChange }: Props) => {
+  const {t} =useTranslation()
   const onExpend = useCallback(() => {
     onIsCollapsedChange(false);
   }, [onIsCollapsedChange]);
@@ -16,7 +18,7 @@ const LeftSection = ({ onIsCollapsedChange }: Props) => {
       <Button onClick={onExpend} variant="ghost">
         <Menu className="w-5 h-5" />
       </Button>
-      <p>Overview</p>
+      <p>{t('overview')}</p>
     </div>
   );
 };

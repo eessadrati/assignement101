@@ -1,0 +1,53 @@
+{
+  "loading": "Laden ...",
+  "overview": "Overzicht",
+  "searchWorkers": "Zoek werknemers ...",
+  "pickDate": "Kies een datum",
+  "dateRange": "Datumbereik",
+  "custom": "Aangepast",
+  "cancel": "Annuleren",
+  "apply": "Toepassen",
+  "noData": "geen gegevens om weer te geven",
+  "profileMenu": {
+    "settings": "Profielinstellingen",
+    "policies": "Onze beleidsregels",
+    "logOut": "Uitloggen"
+  },
+  "sideBar": {
+    "manage": "BEHEREN",
+    "workers": "Werknemers",
+    "contractors": "Aannemers",
+    "PPEs": "P.B.M.",
+    "violations": "P.B.M. Overtredingen",
+    "dashboard": "Dashboard"
+  },
+  "pages": {
+    "goTo": "Ga naar P.B.M. Overtredingen",
+    "checkViolations": "Controleer de pagina P.B.M. Overtredingen",
+    "contractors": "Aannemers Pagina",
+    "home": "Home Pagina",
+    "PPEs": "P.B.M. Pagina",
+    "workers": "Werknemers Pagina"
+  },
+  "violationsPage": {
+    "sites": "LOCATIES",
+    "workers": "Werknemers",
+    "violationsTable": "P.B.M. Overtredingen Tabel",
+    "allContractors": "Alle Aannemers",
+    "selectColumns": "Selecteer kolommen om weer te geven"
+  },
+  "materials": {
+    "Protective gloves": "Beschermende handschoenen",
+    "Safety glasses": "Veiligheidsbril",
+    "Ear protection": "Oorbescherming",
+    "Mask protection": "Masker bescherming",
+    "Knee pads": "Kniebeschermers",
+    "Safety shoes": "Veiligheidsschoenen",
+    "Coverall": "Overalls",
+    "Hi-Vis Jacket": "Hi-Vis Jas",
+    "Safety Harness": "Veiligheidsharnas",
+    "Face shield": "Gezichtsbescherming",
+    "Hard Hat": "Helm",
+    "Welding helmet": "Lashelm"
+  }
+}

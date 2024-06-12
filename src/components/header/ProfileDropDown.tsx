@@ -9,8 +9,10 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import useUser from '@/hooks/useUser';
 import { ChevronDown, LogOut, Settings, ShieldAlert, User } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const ProfileDropDown = () => {
+  const { t } = useTranslation();
   const user = useUser();
 
   return (
@@ -23,7 +25,9 @@ const ProfileDropDown = () => {
               <User className="w-5 h-5" />
             </AvatarFallback>
           </Avatar>
-          <p className="font-medium text-[13px] text-[#7A7A7A] hidden md:block">{user?.name}</p>
+          <p className="font-medium text-[13px] text-[#7A7A7A] hidden md:block">
+            {user?.name}
+          </p>
           <ChevronDown className="hidden w-5 h-5 md:block" />
         </div>
       </DropdownMenuTrigger>
@@ -35,16 +39,17 @@ const ProfileDropDown = () => {
         <DropdownMenuSeparator />
         <DropdownMenuItem>
           <Settings className="w-5 h-5 mr-2" />
-          Profile settings
+         {t('profileMenu.settings')}
         </DropdownMenuItem>
         <DropdownMenuItem>
           <ShieldAlert className="w-5 h-5 mr-2" />
-          Our policies
+          {t('profileMenu.policies')}
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
           <LogOut className="w-5 h-5 mr-2" />
-          Log out
+          {t('profileMenu.logOut')}
+         
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

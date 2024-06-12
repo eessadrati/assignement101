@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { cn } from '../../lib/utils';
 import { buttonVariants } from '../ui/button';
 import { LinkType } from './Navigation';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   isCollapsed: boolean;
@@ -11,6 +12,8 @@ type Props = {
 
 const NavigationItem = ({ link, isCollapsed }: Props) => {
   const { pathname } = useLocation();
+  const { t } = useTranslation();
+
   const isActive = pathname === link.path;
   const variant = isActive ? 'default' : 'ghost';
 
@@ -31,14 +34,14 @@ const NavigationItem = ({ link, isCollapsed }: Props) => {
                 isActive && 'text-primary'
               )}
             />
-            <span className="sr-only">{link.title}</span>
+            <span className="sr-only"> {t(`sideBar.${link.title}`)}</span>
           </Link>
         </TooltipTrigger>
         <TooltipContent
           side="right"
           className="flex items-center text-xs gap-4 bg-[#343434] text-white"
         >
-          {link.title}
+          {t(`sideBar.${link.title}`)}
         </TooltipContent>
       </Tooltip>
     );
@@ -56,7 +59,7 @@ const NavigationItem = ({ link, isCollapsed }: Props) => {
       <link.icon
         className={cn('w-5 h-5 mr-2 text-[#C4C4C4]', isActive && 'text-white')}
       />
-      {link.title}
+      {t(`sideBar.${link.title}`)}
     </Link>
   );
 };

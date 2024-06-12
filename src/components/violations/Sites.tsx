@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 import { Button } from '../ui/button';
 import { cn } from '@/lib/utils';
 import { useSearchParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Sites = () => {
+  const { t } = useTranslation();
   const [sites, setSites] = useState<string[]>([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const siteParam = searchParams.get('site') || 'All';
@@ -32,7 +34,7 @@ const Sites = () => {
   return (
     <div className="flex items-center border-b">
       <p className="text-xs bg-[#FCFCFC] font-medium text-[#ADADAD] px-6 py-3.5  border-r mr-1">
-        SITES
+        {t('violationsPage.sites')}
       </p>
       <div className="flex overflow-auto ">
         {sites.map((site) => (

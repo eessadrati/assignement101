@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import { Checkbox } from '@/components/ui/checkbox';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   checked: boolean;
@@ -8,6 +9,8 @@ type Props = {
 };
 
 const ColumnsToggleItem = ({ checked, label, onCheckedChange }: Props) => {
+  const { t } = useTranslation();
+
   const handleCheckedchange = useCallback(
     (ch: boolean) => {
       onCheckedChange(ch, label);
@@ -22,7 +25,9 @@ const ColumnsToggleItem = ({ checked, label, onCheckedChange }: Props) => {
         checked={checked}
         onCheckedChange={handleCheckedchange}
       />
-      <label className=" text-[12px] text-[#313131]">{label}</label>
+      <label className=" text-[12px] text-[#313131]">
+        {t(`materials.${label}`)}
+      </label>
     </div>
   );
 };

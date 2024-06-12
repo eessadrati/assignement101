@@ -1,0 +1,53 @@
+{
+  "loading": " Loading ...",
+  "overview": "Overview",
+  "searchWorkers": "Search workers ...",
+  "pickDate": "Pick a date",
+  "dateRange": "Date range",
+  "custom": "Custom",
+  "cancel": "Cancel",
+  "apply": "Apply",
+  "noData": "no data to display",
+  "profileMenu": {
+    "settings": " Profile settings",
+    "policies": "Our policies",
+    "logOut": " Log out"
+  },
+  "sideBar": {
+    "manage": "MANAGE",
+    "workers": "Workers",
+    "contractors": "Contractors",
+    "PPEs": "P.P.Es",
+    "violations": "P.P.E Violations",
+    "dashboard": "Dashboard"
+  },
+  "pages": {
+    "goTo": "Go to P.P.E Violations",
+    "checkViolations": "Please Check P.P.E Violations page",
+    "contractors": "Contractors Page",
+    "home": "Home Page ",
+    "PPEs": "P.P.Es Page",
+    "workers": "Workers Page"
+  },
+  "violationsPage": {
+    "sites": "SITES",
+    "workers": "Workers",
+    "violationsTable": "P.P.E Violations Table",
+    "allContractors": "All Contractors",
+    "selectColumns": "Select columns to display"
+  },
+  "materials": {
+    "Protective gloves": "Protective gloves",
+    "Safety glasses": "Safety glasses",
+    "Ear protection": "Ear protection",
+    "Mask protection": "Mask protection",
+    "Knee pads": "Knee pads",
+    "Safety shoes": "Safety shoes",
+    "Coverall": "Coverall",
+    "Hi-Vis Jacket": "Hi-Vis Jacket",
+    "Safety Harness": "Safety Harness",
+    "Face shield": "Face shield",
+    "Hard Hat": "Hard Hat",
+    "Welding helmet": "Welding helmet"
+  }
+}
