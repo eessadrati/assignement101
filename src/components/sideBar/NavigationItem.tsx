@@ -11,7 +11,8 @@ type Props = {
 
 const NavigationItem = ({ link, isCollapsed }: Props) => {
   const { pathname } = useLocation();
-  const variant = pathname === link.path ? 'default' : 'ghost';
+  const isActive = pathname === link.path;
+  const variant = isActive ? 'default' : 'ghost';
 
   if (isCollapsed) {
     return (
@@ -19,9 +20,17 @@ const NavigationItem = ({ link, isCollapsed }: Props) => {
         <TooltipTrigger asChild>
           <Link
             to={link.path}
-            className={cn(buttonVariants({ variant, size: 'icon' }), 'h-9 w-9')}
+            className={cn(
+              buttonVariants({ variant, size: 'icon' }),
+              'h-8 w-8 bg-inherit hover:bg-inherit'
+            )}
           >
-            <link.icon className="w-4 h-4" />
+            <link.icon
+              className={cn(
+                'w-5 h-5 text-[#C4C4C4] hover:text-primary',
+                isActive && 'text-primary'
+              )}
+            />
             <span className="sr-only">{link.title}</span>
           </Link>
         </TooltipTrigger>
@@ -39,12 +48,14 @@ const NavigationItem = ({ link, isCollapsed }: Props) => {
     <Link
       to={link.path}
       className={cn(
-        'text-[#626262] font-normal text-[13px]',
+        'text-[#626262] flex items-center font-normal text-[13px]',
         buttonVariants({ variant, size: 'sm' }),
         'justify-start'
       )}
     >
-      <link.icon className="w-5 h-5 mr-2 " />
+      <link.icon
+        className={cn('w-5 h-5 mr-2 text-[#C4C4C4]', isActive && 'text-white')}
+      />
       {link.title}
     </Link>
   );

@@ -7,7 +7,7 @@ type Props = {
 };
 const SearchInput = ({ search, onSearch }: Props) => {
   return (
-    <div className="relative w-60">
+    <div className="relative w-full md:w-60">
       <Input
         type="text"
         value={search}

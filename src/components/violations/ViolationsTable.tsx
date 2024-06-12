@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import {
   Table,
   TableBody,
+  TableCell,
   TableHead,
   TableHeader,
   TableRow,
@@ -27,6 +28,10 @@ import MaterialTableHead from './MaterialTableHead';
 export type Material = {
   name: string;
   image: string;
+};
+
+type Props = {
+  searchResults?: ViolationType[];
 };
 
 const materials: Material[] = [
@@ -95,15 +100,15 @@ const defaultColumns: Record<string, boolean> = {
   'Welding helmet': true,
 };
 
-const ViolationsTable = () => {
+const ViolationsTable = ({ searchResults }: Props) => {
   const [siteParam] = useSearchParams();
   const [selectedColumns, setSelectedColumns] = useState(defaultColumns);
   const [violations, setViolations] = useState<ViolationType[]>([]);
 
   useEffect(() => {
     const param = siteParam.get('site') || 'All';
-    setViolations(getViolations(param));
-  }, [siteParam]);
+    setViolations(searchResults ? searchResults : getViolations(param));
+  }, [searchResults, siteParam]);
 
   const onColumnsSelect = (checked: boolean, key: string) => {
     setSelectedColumns({ ...selectedColumns, [key]: checked });
@@ -131,14 +136,22 @@ const ViolationsTable = () => {
         </TableRow>
       </TableHeader>
       <TableBody className="">
-        {violations.map((violation) => (
-          <ViolationTableRow
-            key={violation.id}
-            materials={materials}
-            selectedColumns={selectedColumns}
-            violation={violation}
-          />
-        ))}
+        {violations.length <= 0 && (
+          <TableRow>
+            <TableCell colSpan={4}>
+              <div className="w-full text-[#b9b9b9]">no data to display</div>
+            </TableCell>
+          </TableRow>
+        )}
+        {violations.length > 0 &&
+          violations.map((violation) => (
+            <ViolationTableRow
+              key={violation.id}
+              materials={materials}
+              selectedColumns={selectedColumns}
+              violation={violation}
+            />
+          ))}
       </TableBody>
     </Table>
   );

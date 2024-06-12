@@ -3,16 +3,30 @@ import ViolationsTable from '@/components/violations/ViolationsTable';
 import ViolationsTopHeader from '@/components/violations/ViolationsTopHeader';
 import useDebounce from '@/hooks/useDebounce';
 import { useEffect, useState } from 'react';
+import { ViolationType, getViolationsBySearchWorkers } from '@/lib/mockApi';
+import { useSearchParams } from 'react-router-dom';
 
 const Violations = () => {
   const [searchWorkers, setSearchWorkers] = useState('');
+  const [searchResults, setSearchResults] = useState<
+    ViolationType[] | undefined
+  >(undefined);
   const debouncedSearchWorkers = useDebounce(searchWorkers, 500);
+  const [searchParams] = useSearchParams();
+  const siteParam = searchParams.get('site') || 'All';
 
   useEffect(() => {
     if (debouncedSearchWorkers) {
-      console.log('Searching for:', debouncedSearchWorkers);
+      //mock api
+      const res = getViolationsBySearchWorkers(
+        debouncedSearchWorkers,
+        siteParam
+      );
+      setSearchResults(res);
+    } else {
+      setSearchResults(undefined);
     }
-  }, [debouncedSearchWorkers]);
+  }, [debouncedSearchWorkers, siteParam]);
 
   return (
     <div className="flex flex-col flex-1 w-full h-full overflow-hidden">
@@ -22,7 +36,7 @@ const Violations = () => {
           search={searchWorkers}
           onSearch={setSearchWorkers}
         />
-        <ViolationsTable />
+        <ViolationsTable searchResults={searchResults} />
       </div>
     </div>
   );

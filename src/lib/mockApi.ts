@@ -166,7 +166,7 @@ const violations: ViolationType[] = [
   {
     id: 2,
     worker: {
-      name: 'Blaise DEFLOO',
+      name: 'John Doe',
       profile: workerProfile,
       role: 'Manager',
       company: company,
@@ -306,7 +306,7 @@ const violations: ViolationType[] = [
   {
     id: 3,
     worker: {
-      name: 'Blaise DEFLOO',
+      name: 'John Doe',
       profile: workerProfile,
       role: 'Manager',
       company: company,
@@ -578,7 +578,7 @@ const violations: ViolationType[] = [
   {
     id: 5,
     worker: {
-      name: 'Blaise DEFLOO',
+      name: 'Jane Smith',
       profile: workerProfile,
       role: 'Manager',
       company: company,
@@ -718,7 +718,7 @@ const violations: ViolationType[] = [
   {
     id: 6,
     worker: {
-      name: 'Blaise DEFLOO',
+      name: 'Jane Smith',
       profile: workerProfile,
       role: 'Manager',
       company: company,
@@ -851,7 +851,7 @@ const violations: ViolationType[] = [
   {
     id: 7,
     worker: {
-      name: 'Blaise DEFLOO',
+      name: 'David Wilson',
       profile: workerProfile,
       role: 'Manager',
       company: company,
@@ -1682,4 +1682,17 @@ const getViolations = (param: string) => {
   return violations.filter((violation) => violation.site === param);
 };
 
-export { getViolations };
+const getViolationsBySearchWorkers = (search: string, site: string) => {
+  if (site === 'All') {
+    return violations.filter((v) => {
+      return v.worker.name.toLowerCase().includes(search.toLowerCase());
+    });
+  }
+  return violations.filter((v) => {
+    return (
+      v.worker.name.toLowerCase().includes(search.toLowerCase()) &&
+      v.site === site
+    );
+  });
+};
+export { getViolations, getViolationsBySearchWorkers };

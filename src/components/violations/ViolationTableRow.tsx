@@ -1,6 +1,6 @@
 import { ViolationType } from '../../lib/mockApi';
 import { TableCell, TableRow } from '../ui/table';
-import ViolationInfoPopover from './ViolationInfoPopover';
+import ViolationsInfo from './ViolationInfo';
 import { Material } from './ViolationsTable';
 
 type Props = {
@@ -36,7 +36,7 @@ const ViolationTableRow = ({
         <img className="w-10 h-10 " src={violation.worker.company} />
       </TableCell>
       {materials.map((material) => (
-        <ViolationInfoPopover
+        <ViolationsInfo
           key={material.name}
           selectedColumn={selectedColumns[material.name]}
           violationInfo={violation.materials[material.name]}

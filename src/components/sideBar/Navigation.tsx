@@ -1,43 +1,33 @@
-import {
-  BriefcaseBusiness,
-  Hand,
-  Home,
-  LifeBuoy,
-  LucideIcon,
-  User,
-} from 'lucide-react';
 import NavigationItem from './NavigationItem';
 import { Separator } from '../ui/separator';
+import { GiGloves } from 'react-icons/gi';
+import { BsFillPersonFill } from 'react-icons/bs';
+import { IoMdBriefcase } from 'react-icons/io';
+import { HiHandRaised } from 'react-icons/hi2';
+import { AiOutlineHome } from 'react-icons/ai';
+
+import { type IconType } from 'react-icons';
 
 interface NavProps {
   isCollapsed: boolean;
 }
 
-/**
- *  links: {
-    title: string;
-    label?: string;
-    icon: LucideIcon;
-    variant: 'default' | 'ghost';
-  }[];
- */
-
 export type LinkType = {
   title: string;
   path: string;
-  icon: LucideIcon;
+  icon: IconType;
 };
 
 const mainLinks: LinkType[] = [
   {
     title: 'Dashboard',
     path: '/',
-    icon: Home,
+    icon: AiOutlineHome,
   },
   {
     title: 'P.P.E Violations',
     path: '/PPE_violations',
-    icon: Hand,
+    icon: HiHandRaised,
   },
 ];
 
@@ -45,17 +35,17 @@ const manageLinks: LinkType[] = [
   {
     title: 'P.P.Es',
     path: '/PPEs',
-    icon: LifeBuoy,
+    icon: GiGloves,
   },
   {
     title: 'Contractors',
     path: '/contractors',
-    icon: BriefcaseBusiness,
+    icon: IoMdBriefcase,
   },
   {
     title: 'Workers',
     path: '/workers',
-    icon: User,
+    icon: BsFillPersonFill,
   },
 ];
 

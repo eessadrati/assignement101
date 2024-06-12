@@ -38,7 +38,7 @@ const DatePicker = () => {
             id="date"
             variant={'outline'}
             className={cn(
-              'w-60 h-8 justify-between  font-normal',
+              'w-full md:w-60 h-8 justify-between  font-normal',
               !date && 'text-muted-foreground'
             )}
           >

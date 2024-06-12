@@ -50,7 +50,7 @@ const LanguaguesDropDown = () => {
   const { i18n } = useTranslation();
   const defaultLang = languages[i18n.language] || languages.en;
   const [selectedLangaues, setSelectedLangaues] = useState(defaultLang);
-
+ 
   const onLanguageChange = (lan: Language) => {
     setSelectedLangaues(lan);
     localStorage.setItem('lang', lan.code);

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Button } from '../ui/button';
-import { cn } from '../../lib/utils';
+import { cn } from '@/lib/utils';
 import { useSearchParams } from 'react-router-dom';
 
 const Sites = () => {
@@ -28,12 +28,13 @@ const Sites = () => {
     }
     setSearchParams(`site=${site}`);
   };
+
   return (
     <div className="flex items-center border-b">
       <p className="text-xs bg-[#FCFCFC] font-medium text-[#ADADAD] px-6 py-3.5  border-r mr-1">
         SITES
       </p>
-      <div className='flex overflow-auto '>
+      <div className="flex overflow-auto ">
         {sites.map((site) => (
           <Button
             variant="ghost"

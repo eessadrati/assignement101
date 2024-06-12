@@ -20,13 +20,14 @@ const ColumnsToggle = ({
   selectedColumns,
 }: Props) => {
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <Button size="icon" variant="ghost" className="w-7 h-7">
           <Settings className="w-4 h-4" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="start">
+      <DropdownMenuContent className="w-[162px]" align="start">
+        <div className="font-medium text-[11px] text-[#989797] ml-2">Select columns to display</div>
         {columns.map((column) => (
           <ColumnsToggleItem
             key={column.name}
