@@ -33,7 +33,7 @@ const ViolationsTopHeader = ({
       <h3 className="mb-2 text-base font-medium">
         {t('violationsPage.violationsTable')}
       </h3>
-      <div className="flex flex-col gap-3 mr-2 md:items-center md:flex-row">
+      <div className="flex flex-col gap-3 mr-2 md:items-center md:flex-row md:justify-end">
         <div className="flex flex-col gap-3 sm:flex-row">
           <SearchInput search={search} onSearch={onSearch} />
           <DatePicker date={date} onDateChange={onDateChange} />
