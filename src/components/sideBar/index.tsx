@@ -18,7 +18,7 @@ const SideBar = ({ onIsCollapsedChange, isCollapsed }: Props) => {
   }, [onIsCollapsedChange]);
 
   return (
-    <div
+    <div data-testid='sidebar'
       className={cn(
         'hidden lg:flex flex-col justify-between h-full transition-width duration-300 border-r lg:w-60',
         isCollapsed ? 'lg:w-16' : 'px-2'
@@ -29,7 +29,7 @@ const SideBar = ({ onIsCollapsedChange, isCollapsed }: Props) => {
           {!isCollapsed && (
             <>
               <img className="flex-1 w-full h-10 m-1" src={logo} />
-              <Button onClick={onCollapse} variant="ghost">
+              <Button data-testid="collapse-btn" onClick={onCollapse} variant="ghost">
                 <Menu className="w-5 h-5" />
               </Button>
             </>

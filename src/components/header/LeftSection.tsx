@@ -15,7 +15,7 @@ const LeftSection = ({ onIsCollapsedChange }: Props) => {
 
   return (
     <div className="hidden lg:flex items-center gap-3 text-lg font-medium py-2.5">
-      <Button onClick={onExpend} variant="ghost">
+      <Button data-testid="expend-btn" onClick={onExpend} variant="ghost">
         <Menu className="w-5 h-5" />
       </Button>
       <p>{t('overview')}</p>

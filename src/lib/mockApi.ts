@@ -1689,6 +1689,7 @@ const getViolationsBySearchWorkers = (
   date: DateRange | undefined
 ) => {
   //assuming date affect the results
+  console.log(date);
   if (site === 'All') {
     return violations.filter((v) => {
       return v.worker.name.toLowerCase().includes(search.toLowerCase());

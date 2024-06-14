@@ -36,7 +36,10 @@ const Violations = () => {
   }, [debouncedSearchWorkers, date, siteParam]);
 
   return (
-    <div className="flex flex-col flex-1 w-full h-full overflow-hidden">
+    <div
+      data-testid="violation_page"
+      className="flex flex-col flex-1 w-full h-full overflow-hidden"
+    >
       <Sites />
       <div className="bg-[#F2F2F2] overflow-auto pb-1 pt-7 md:pt-10 px-4 md:px-7  flex flex-col h-full w-full flex-1">
         <ViolationsTopHeader
